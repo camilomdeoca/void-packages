@@ -1,0 +1,33 @@
+# Template file for 'Hackneyed'
+pkgname=Hackneyed
+version=0.9.3
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=gnu-makefile
+#configure_args=""
+make_build_args="-O theme"
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="ImageMagick inkscape xcursorgen jq"
+depends=""
+short_desc="Classic cursors for X11/Wayland"
+maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
+license="X11-distribute-modifications-variant"
+homepage="https://gitlab.com/Enthymeme/hackneyed-x11-cursors"
+#changelog=""
+distfiles="https://gitlab.com/Enthymeme/hackneyed-x11-cursors/-/archive/$version/hackneyed-x11-cursors-$version.tar.gz"
+checksum=fe411109969790c60641a9fe22ab413dc623bdfbc3a8907547cb769e3c0aa56d
+
+build_options="dark left"
+build_options_default=""
+
+if [ "$build_option_left" ]; then
+	make_build_args+=" theme.left"
+fi
+
+if [ "$build_option_dark" ]; then
+	make_build_args+=" DARK_THEME=1"
+fi
