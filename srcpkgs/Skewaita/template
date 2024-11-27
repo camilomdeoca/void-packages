@@ -1,0 +1,37 @@
+# Template file for 'Skewaita'
+pkgname=Skewaita
+version=99b2d2513d
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+#build_style=gnu-configure
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends="sassc which"
+depends=""
+short_desc="gtk skeuomorphic theme"
+maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
+license="GPL-2.0-or-later"
+homepage="https://git.disroot.org/eudaimon/Skewaita"
+#changelog=""
+distfiles="https://git.disroot.org/eudaimon/Skewaita/archive/${version}.tar.gz"
+checksum=e783a38cb618d0c2f3e6c223cb06ce2b5ec2f9fbb8acb495f36c9ccf2d94095a
+
+do_build() {
+	cd source/templates
+	./use_scheme.sh colorscheme-dark-adwaita.sh
+	cd ..
+	./compile.sh dark
+}
+
+do_install() {
+	vmkdir usr/share/themes/Skewaita/
+    vcopy "gtk-*" usr/share/themes/Skewaita/
+    vcopy xfwm4 usr/share/themes/Skewaita/
+    vmkdir usr/share/doc/Skewaita/
+    vcopy README.md usr/share/doc/Skewaita/
+}
