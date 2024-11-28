@@ -1,0 +1,24 @@
+# Template file for 'moonlight-qt'
+pkgname=moonlight-qt
+version=6.1.0
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=qmake
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="qt6-base-devel pkg-config"
+makedepends="qt6-tools-devel qt6-declarative-devel qt6-svg-devel SDL2-devel
+ SDL2_ttf-devel ffmpeg-devel libva-devel libvdpau-devel opus-devel
+ pulseaudio-devel alsa-lib-devel libdrm-devel openssl-devel"
+depends="qt6-plugin-tls-openssl"
+short_desc="GameStream client"
+maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://moonlight-stream.org/"
+#changelog=""
+distfiles="https://github.com/moonlight-stream/moonlight-qt/releases/download/v$version/MoonlightSrc-$version.tar.gz"
+checksum=696cc470a62e2f2e9b77739d400b389e7578c9510383c08614007c92be49d5b0
