@@ -1,0 +1,32 @@
+From 2ddcc40105f9f385409e5e9ca9c5cddfa3f391d0 Mon Sep 17 00:00:00 2001
+From: Camilo Montes de Oca <camilomdeoca@gmail.com>
+Date: Sat, 1 Mar 2025 20:05:11 -0300
+Subject: [PATCH] enable extensions and add extension's windows to the default
+ layout
+
+---
+ extensions_v5/extensions.cpp => extensions.cpp | 0
+ gf2.cpp                                        | 2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename extensions_v5/extensions.cpp => extensions.cpp (100%)
+
+diff --git a/extensions_v5/extensions.cpp b/extensions.cpp
+similarity index 100%
+rename from extensions_v5/extensions.cpp
+rename to extensions.cpp
+diff --git a/gf2.cpp b/gf2.cpp
+index 1cf8cb1..1abf475 100644
+--- a/gf2.cpp
++++ b/gf2.cpp
+@@ -175,7 +175,7 @@ Array<InterfaceWindow> interfaceWindows;
+ Array<InterfaceCommand> interfaceCommands;
+ Array<InterfaceDataViewer> interfaceDataViewers;
+ Array<ReceiveMessageType> receiveMessageTypes;
+-char *layoutString = (char *) "v(75,h(80,Source,v(50,t(Exe,Breakpoints,Commands,Struct),t(Stack,Files,Thread,CmdSearch))),h(65,Console,t(Watch,Locals,Registers,Data)))";
++char *layoutString = (char *) "v(75,h(80,Source,v(50,t(Exe,Breakpoints,Commands,Struct),t(Stack,Files,Thread,View,CmdSearch))),h(65,Console,t(Watch,Locals,Registers,Data,Memory)))";
+ const char *fontPath;
+ int fontSizeCode = 13;
+ int fontSizeInterface = 11;
+-- 
+2.48.1
+
