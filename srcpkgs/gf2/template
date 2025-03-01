@@ -1,0 +1,22 @@
+# Template file for 'gf2'
+pkgname=gf2
+version=20250228
+_githash=e34738b36be52eaf189dff676639d8f2c1b3bb55
+revision=1
+hostmakedepends=""
+makedepends="gdb freetype-devel libX11-devel"
+depends="gdb freetype libX11"
+short_desc="A GDB frontend"
+maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
+license="MIT"
+homepage="https://github.com/nakst/gf"
+distfiles="https://github.com/nakst/gf/archive/${_githash}.tar.gz"
+checksum=938268891c5f024b5f327677ad16b68f7fec5aac92fc36747e80e7673f514863
+
+do_build() {
+	./build.sh
+}
+
+do_install() {
+	vbin ${pkgname}
+}
