@@ -1,6 +1,6 @@
 # Template file for 'qt6gtk2'
 pkgname=qt6gtk2
-version=0.3
+version=0.6
 revision=1
 #archs="i686 x86_64"
 #build_wrksrc=
@@ -15,8 +15,8 @@ makedepends="pkgconf qt6-base-devel qt6-base-private-devel gtk+-devel libX11"
 depends=""
 short_desc="GTK+2.0 integration plugins for Qt6"
 maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
-license="GPL-2.0"
-homepage="https://github.com/trialuser02/qt6gtk2"
-changelog="https://raw.githubusercontent.com/trialuser02/qt6gtk2/refs/heads/master/ChangeLog"
-distfiles="https://github.com/trialuser02/qt6gtk2/releases/download/0.3/qt6gtk2-${version}.tar.xz"
-checksum=386d0665558f1ac7ec318f2741dd762ca8c9a4a071a2c5f181212641ad0658b3
+license="GPL-2.0-or-later"
+homepage="https://www.opencode.net/trialuser/qt6gtk2"
+changelog="https://www.opencode.net/trialuser/qt6gtk2/-/raw/master/ChangeLog"
+distfiles="https://www.opencode.net/api/v4/projects/5460/packages/generic/qt6gtk2/${version}/qt6gtk2-${version}.tar.xz"
+checksum=80decb327e1bf5fecd2dd95275224592f7c0d290e9e45ec73326e6d752c913f8
