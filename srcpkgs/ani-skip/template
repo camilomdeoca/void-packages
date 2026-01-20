@@ -1,0 +1,28 @@
+# Template file for 'ani-skip'
+pkgname=ani-skip
+version=1.0.1
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+#build_style=gnu-configure
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends=""
+makedepends=""
+depends="grep sed curl fzf mpv"
+short_desc="A script to skip anime opening and ending"
+maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/synacktraa/ani-skip"
+#changelog=""
+distfiles="https://github.com/synacktraa/ani-skip/archive/refs/tags/${version}.tar.gz"
+checksum=69a062e52962508178d95b8e3ab66bf4bcd7586727f1c420032161b42fa5c35f
+
+do_install() {
+	vbin ani-skip
+	vmkdir etc/mpv/scripts
+	vinstall skip.lua 644 etc/mpv/scripts
+}
