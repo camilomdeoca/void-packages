@@ -1,6 +1,6 @@
 # Template file for 'awesome-git'
 pkgname=awesome-git
-version=4.3
+version=4.3-f1388f9
 revision=1
 build_style=cmake
 build_helper="qemu"
@@ -10,15 +10,16 @@ hostmakedepends="ruby-asciidoctor ImageMagick pkg-config"
 makedepends="libxcb-devel pango-devel xcb-util-devel xcb-util-image-devel
  xcb-util-keysyms-devel xcb-util-wm-devel xcb-util-cursor-devel
  startup-notification-devel libxdg-basedir-devel
- gdk-pixbuf-devel dbus-devel libxkbcommon-devel xcb-util-xrm-devel"
+ gdk-pixbuf-devel dbus-devel libxkbcommon-devel xcb-util-xrm-devel
+ harfbuzz-devel"
 depends="dbus-x11 pango"
 short_desc="Highly configurable, next gen framework window manager for X"
 maintainer="Camilo Montes de Oca <camilomdeoca@gmail.com>"
 license="GPL-2.0-or-later"
 homepage="http://awesomewm.org"
 #distfiles="https://github.com/awesomeWM/awesome/releases/download/v${version}/awesome-${version}.tar.xz"
-distfiles="https://github.com/awesomeWM/awesome/archive/0f950cbb625175134b45ea65acdf29b2cbe8c456.tar.gz"
-checksum=a5a0b5ae147c15a5ce751f5be13f0fed57c65539165b175833cc405d637106ff
+distfiles="https://github.com/awesomeWM/awesome/archive/f1388f9fc4e071407bfdc59c5964ea1eb79e746c.tar.gz"
+checksum=45526365ba6bc0785ff1d0286ec43dbedd83056bf74b1d48a73430d27fb6c8da
 conflicts="awesome"
 
 build_options="jit"
@@ -38,6 +39,10 @@ else
 fi
 
 CFLAGS="-fcommon"
+
+post_patch() {
+	sed -i '/add_dependencies.*check-examples/d' CMakeLists.txt
+}
 
 pre_configure() {
 	if [ "$build_option_jit" ]; then
