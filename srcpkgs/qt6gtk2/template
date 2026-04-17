@@ -1,6 +1,6 @@
 # Template file for 'qt6gtk2'
 pkgname=qt6gtk2
-version=0.6
+version=0.7
 revision=1
 #archs="i686 x86_64"
 #build_wrksrc=
@@ -19,4 +19,4 @@ license="GPL-2.0-or-later"
 homepage="https://www.opencode.net/trialuser/qt6gtk2"
 changelog="https://www.opencode.net/trialuser/qt6gtk2/-/raw/master/ChangeLog"
 distfiles="https://www.opencode.net/api/v4/projects/5460/packages/generic/qt6gtk2/${version}/qt6gtk2-${version}.tar.xz"
-checksum=80decb327e1bf5fecd2dd95275224592f7c0d290e9e45ec73326e6d752c913f8
+checksum=53c0f9b1d7fd3cb5f22cc0b36a567bd2790ee8348b89728d32fb322a00666092
